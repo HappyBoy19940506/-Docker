@@ -141,7 +141,7 @@ VOLUME ["/var/lib/mysql"]
 
 ```
 ```
- container 
+ container创建后 如果没有一个阻塞进程（比如监听），就会自动关闭running状态，docker -d 可以将阻塞进程后台显示。
 
 ```
 
