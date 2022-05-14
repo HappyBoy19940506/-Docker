@@ -23,7 +23,7 @@ docker build -t [new-image-name] .
 ```
 
 ```
-docker run -p 80:80 --name container_name image-name (-d)
+docker run (-d)(--rm) -p 80:80 --name container_name image-name 
 ```
 
 ```
@@ -37,4 +37,12 @@ docker run -p 80:80 --name container_name image-name (-d)
   但是。container1- 81:80  containr2- 80:80. 是可以的， 2个浏览器可以同时监听一个服务器发送的内容
 ```
 
+```
+docker run --rm -p 80:5000 --name webapp_1 myimage:1.0
+    --rm  阻塞显示，中断后立即删除 该container
+```
 
+```
+docker run -d -p 80:5000 --name webapp_1 myimage:1.0
+    -d 不阻塞显示，需要到后台 docker ps -a来查看正在运行的该container
+```
