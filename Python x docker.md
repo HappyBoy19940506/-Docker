@@ -12,12 +12,12 @@
 
 ├── src 
 
-│   ├── templates
+   │   ├── templates
 
-│   │   ├── index.html
+      │   │   ├── index.html
 
-│   └── app.py 
+    │   └── app.py 
 
-└── tests  
+├──  tests  
 
 
