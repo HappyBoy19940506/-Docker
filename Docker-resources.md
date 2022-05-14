@@ -94,6 +94,6 @@ RUN [command]
 相当于在 命令行中运行 什么
 ```
 ```
-ADD [host_file] [file_inside_docker]
-1
+ADD [host_file/folder]     [destination_inside_docker]
+拷贝文件/文件夹/url。 到 容器里面去，并且会自动解压
 ```
