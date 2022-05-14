@@ -59,6 +59,6 @@ docker kill container_name
 ```
 print log of container
 
-docker log --tail 100 container_name
+docker log --tails 100 container_name
 
 ```
