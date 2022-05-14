@@ -127,5 +127,10 @@ ENTRYPOINT
   
 ```
 
+```
+WORKDIR
+ 为 RUN, CMD, ENTRYPOINT, COPY and ADD instructions 设置目录，也就是说 进入容器之后 在哪里
+ 
+```
 
 
