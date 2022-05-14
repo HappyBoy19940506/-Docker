@@ -69,3 +69,13 @@ Delete all running and stopped containers
 docker container rm -f $(docker ps -aq)
 
 ```
+
+
+```
+image会自动成为一个 repo，后续同名的image会自动加入到同一个repo中，用tag来区别版本。
+
+docker build -t DockerHubAccountID/repo(image):tag .
+
+docker push docker-acc-Id/repo(image):tag
+
+```
