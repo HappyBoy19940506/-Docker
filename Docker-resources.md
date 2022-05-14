@@ -1,3 +1,4 @@
+**--------------------docker command------------------------------------**
 ```
 docker image ls
 ```
@@ -86,7 +87,7 @@ Retag a local image with a new image name and tag
 docker tag myimage:1.0 myrepo/myimage:2.0
 
 ```
-**--------------------how to wirte a dockfile------------------------------------**
+**--------------------how to wirte a dockerfile------------------------------------**
 
 ```
 RUN
