@@ -121,3 +121,11 @@ CMD
 ```
 
 ```
+ENTRYPOINT
+  作用和cmd一样 ，一个dockerfile里面只能有一个entrypoint。
+  但是 如果同时写了cmd和entrypoint， 谁在后面谁生效。
+  
+```
+
+
+
