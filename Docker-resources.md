@@ -86,3 +86,9 @@ Retag a local image with a new image name and tag
 docker tag myimage:1.0 myrepo/myimage:2.0
 
 ```
+**--------------------how to wirte a dockfile------------------------------------**
+
+```
+RUN
+相当于在 命令行中运行 什么
+```
