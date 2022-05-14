@@ -115,8 +115,9 @@ ENV HOME_PATH /Users/user
 
 ```
 CMD
-每个dockerfile里面之内存在一个cmd命令，用作容器启动之后 执行什么操作
+每个dockerfile里面之内只能存在一个cmd命令，用作容器启动之后 执行什么操作.
 比如flask，肯定要执行 cmd python3 app.py  //// CMD ["python", "./src/app.py"]
+如果有两个，后面的会覆盖前面的。 如果在shell中重新定义，也会使得dockerfile中的cmd失效。
 ```
 
 ```
