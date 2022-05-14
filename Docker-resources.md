@@ -62,3 +62,10 @@ print log of container
 docker log --tails 100 container_name
 
 ```
+
+```
+Delete all running and stopped containers
+
+docker container rm -f $(docker ps -aq)
+
+```
