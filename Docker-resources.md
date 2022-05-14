@@ -134,9 +134,10 @@ WORKDIR
 ```
 
 ```
-VOLUME
-制定容器挂载到指定的目录或者 另一个容器，我具体不知道这个咋用，应该是用在数据库上
-但是一般不写在dockerfile里，一般在 docker run -p --name xxxxx 中使用来临时决定挂载目标
+VOLUME ["/var/lib/mysql"]
+容器中的/var/lib/mysql目录 会在容器运行时 自动复制到 宿主机的  /var/lib/docker/volumes下保存起来
+
+但是一般不写在dockerfile里，一般在 docker run -p --name xxxxx 中使用-v 来临时决定存在哪里
 
 ```
 
