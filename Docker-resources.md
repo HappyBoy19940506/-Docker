@@ -7,3 +7,7 @@
 `docker ps `
 
 `docker rm [containter ID]`
+
+```
+docker build -t [new-image-name] .
+```
