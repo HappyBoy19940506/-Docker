@@ -107,4 +107,8 @@ EXPOSE
 决定了docker中的该container对外开放了 哪个端口。
 
 ```
-
+```
+ENV
+设置container内的环境变量
+ENV HOME_PATH /Users/user
+```
