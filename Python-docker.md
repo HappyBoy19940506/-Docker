@@ -1,5 +1,6 @@
 **Directory structure for a python web app**
 
+```
 ├── Dockerfile  
 
 ├── docker-compose.yml  
@@ -19,5 +20,4 @@
    ├──  app.py 
 
 ├──  tests  
-
-
+```
