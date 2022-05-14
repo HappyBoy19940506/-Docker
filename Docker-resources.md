@@ -79,3 +79,10 @@ docker build -t DockerHubAccountID/repo(image):tag .
 docker push docker-acc-Id/repo(image):tag
 
 ```
+
+```
+Retag a local image with a new image name and tag
+
+docker tag myimage:1.0 myrepo/myimage:2.0
+
+```
