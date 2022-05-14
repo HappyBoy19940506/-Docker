@@ -140,4 +140,8 @@ VOLUME ["/var/lib/mysql"]
 但是一般不写在dockerfile里，一般在 docker run -p --name xxxxx 中使用-v 来临时决定存在哪里
 
 ```
+```
+ container 
+
+```
 
