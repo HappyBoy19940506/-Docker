@@ -90,6 +90,10 @@ docker tag myimage:1.0 myrepo/myimage:2.0
 **--------------------how to wirte a dockerfile------------------------------------**
 
 ```
-RUN
+RUN [command]
 相当于在 命令行中运行 什么
+```
+```
+ADD [host_file] [file_inside_docker]
+
 ```
