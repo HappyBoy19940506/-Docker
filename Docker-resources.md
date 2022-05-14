@@ -46,3 +46,12 @@ docker run --rm -p 80:5000 --name webapp_1 myimage:1.0
 docker run -d -p 80:5000 --name webapp_1 myimage:1.0
     -d 不阻塞显示，需要到后台 docker ps -a来查看正在运行的该container
 ```
+
+```
+stop a running container:
+
+Ctrl+C in CLI
+docker stop container_name
+docker kill container_name
+
+```
