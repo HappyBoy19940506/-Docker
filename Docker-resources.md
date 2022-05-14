@@ -102,5 +102,9 @@ COPY [host_file/folder]     [destination_inside_docker]
 拷贝文件/文件夹/url。 到 容器里面去，但是 和add 不同的是，不会自动下载或者解压
 ```
 
+```
+EXPOSE
+决定了docker中的该container对外开放了 哪个端口。
 
+```
 
