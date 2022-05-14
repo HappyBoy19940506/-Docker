@@ -1,4 +1,4 @@
-**Directory structure for a python web app**
+** 1. Directory structure for a python web app**
 
 ```
 ├── Dockerfile  
@@ -13,11 +13,14 @@
 
 ├── src 
 
-   ├── templates
+        ├── templates
    
-     -── index.html
+               ├── index.html
          
-   ├──  app.py 
+        ├──  app.py 
 
 ├──  tests  
 ```
+
+
+** 2.  **
