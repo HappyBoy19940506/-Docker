@@ -1,12 +1,22 @@
-```docker image ls```
+```
+docker image ls
+```
 
-```docker image rm [image name]```
+```
+docker image rm [image name]
+```
 
-```docker ps -a```
+```
+docker ps -a
+```
 
-```docker ps ```
+```
+docker ps
+```
 
-```docker rm [containter ID]```
+```
+docker rm [containter ID]
+```
 
 ```
 docker build -t [new-image-name] .
