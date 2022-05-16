@@ -33,7 +33,8 @@ EXPOSE
 ```
 ENV
 设置container内的环境变量
-ENV HOME_PATH /Users/user
+ENV HOME_PATH = '/Users/user'
+调用: $HOME_PATH
 ```
 
 ```
