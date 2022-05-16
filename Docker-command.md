@@ -65,9 +65,11 @@ docker logs --tail 100 container_name
 ```
 
 ```
-容器运行后，如何进入容器：
-docker exec -it 
-其实这部 dockerfile的cmd命令或者 entrypoint已经做了
+容器运行后，如何进入容器里面玩，容器里直接改动会使得展现的东西立刻发生变化：
+
+docker exec -it +containername bash
+
+其实这部 dockerfile的cmd命令或者 entrypoint做的内容
 
 ```
 
