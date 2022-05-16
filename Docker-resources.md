@@ -87,7 +87,21 @@ Retag a local image with a new image name and tag
 docker tag myimage:1.0 myrepo/myimage:2.0
 
 ```
+
+```To delete all containers including its volumes use,
+
+docker rm -vf $(docker ps -aq)
+
+```
+
+```
+To delete all the images,
+
+docker rmi -f $(docker images -aq)
+
+```
 **--------------------how to wirte a dockerfile------------------------------------**
+
 
 ```
 RUN [command]
