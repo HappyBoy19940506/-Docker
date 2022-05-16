@@ -77,3 +77,12 @@ VOLUME ["/var/lib/mysql"]
   这就是问什么 cmd里面写 run
 ```
 
+```
+
+ONBUILD xxx
+
+比如ONBUILD ENV = 100
+当前dockefile创建镜像时，不会 触发 该onbuild命令。
+但是 如果有别的dockerfile FROM了该镜像， 那么这个dockerfile 在build其镜像时候 就会触发 该命令。
+
+```
