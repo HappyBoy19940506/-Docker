@@ -11,7 +11,7 @@ ADD 【不常用】 [host_file/folder]     [destination_inside_docker]
 ```
 ```
 COPY 【更常用】 [host_file/folder]     [destination_inside_docker]
-拷贝文件/文件夹/url。 到 容器里面去，但是 和add 不同的是，不会自动下载或者解压
+拷贝文件/文件夹。 到 容器里面去，但是 和add 不同的是，不会自动下载或者解压
 ```
 
 ```
