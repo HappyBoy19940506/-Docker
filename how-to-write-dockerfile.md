@@ -3,7 +3,7 @@
 
 ```
 RUN [command]
-相当于在 命令行中运行 什么
+相当于在 容器build过程中 命令行中执行什么。。。
 ```
 ```
 ADD [host_file/folder]     [destination_inside_docker]
