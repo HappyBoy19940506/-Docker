@@ -69,7 +69,6 @@ docker logs --tail 100 container_name
 
 docker exec -it +containername bash
 
-其实这部 dockerfile的cmd命令或者 entrypoint做的内容
 
 ```
 
