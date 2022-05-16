@@ -38,6 +38,7 @@ ENV HOME_PATH /Users/user
 
 ```
 CMD
+相当于在 容器run过程中 命令行中执行什么。。。一定要写 阻塞式指令，否则容器执行完 生命周期结束，docker ps 就查不到了，会自动 停止运行。
 每个dockerfile里面之内只能存在一个cmd命令，用作容器启动之后 执行什么操作.
 比如flask，肯定要执行 cmd python3 app.py  //// CMD ["python", "./src/app.py"]
 如果有两个，后面的会覆盖前面的。 如果在shell中重新定义，也会使得dockerfile中的cmd失效。
