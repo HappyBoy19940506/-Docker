@@ -5,6 +5,9 @@ docker image ls
 
 ```
 docker image rm [image name]
+
+
+docker image rmi [image name] ----要清楚干净用rmi，因为image是分层build，如果用rm可能有底层image缓存没有删除
 ```
 
 ```
