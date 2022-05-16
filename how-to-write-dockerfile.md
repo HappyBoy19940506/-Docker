@@ -51,6 +51,9 @@ VOLUME ["/var/lib/mysql"]
 
 但是一般不写在dockerfile里，一般在 docker run -p --name xxxxx 中使用-v 来临时决定存在哪里
 
+比如  docker run -p 80:80 -v 'pwd':'usr/share/nginx/html image-name:1.0 
+这样的话，外部pwd 文件夹  内部的 html文件夹会形成映射， 两边同时储存，同时变化。
+
 ```
 ```
  container创建后 如果没有一个阻塞进程（比如监听），就会自动关闭running状态，docker -d 可以将阻塞进程后台显示。
