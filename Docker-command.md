@@ -20,7 +20,8 @@ docker rm [containter ID]
 ```
 
 ```
-docker build -t [new-image-name] .
+docker build -t [new-image-name]:tagname . 
+如果不加tag，那么每次build dockerfile会重写改image，如果你改了dockerfile，，再build同名的image就会覆盖旧版本。
 ```
 
 ```
