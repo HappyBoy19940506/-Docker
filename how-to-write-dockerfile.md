@@ -38,16 +38,20 @@ ENV HOME_PATH /Users/user
 
 ```
 CMD
-相当于在 容器run过程中 命令行中执行什么。。。一定要写 阻塞式指令，否则容器执行完 生命周期结束，docker ps 就查不到了，会自动 停止运行。
-每个dockerfile里面之内只能存在一个cmd命令，用作容器启动之后 执行什么操作.
+1.相当于在 容器run过程中 命令行中执行什么。。。一定要写 阻塞式指令，否则容器执行完 生命周期结束，docker ps 就查不到了，会自动 停止运行。
+2。每个dockerfile里面之内只能存在一个cmd命令，用作容器启动之后 执行什么操作.
 比如flask，肯定要执行 cmd python3 app.py  //// CMD ["python", "./src/app.py"]
-如果有两个，后面的会覆盖前面的。 如果在shell中重新定义，也会使得dockerfile中的cmd失效。
+3.如果有两个，后面的会覆盖前面的。 
+4.如果在shell中重新定义，比如 docker run echo xxx，也会使得dockerfile中的cmd失效。
 ```
 
 ```
 ENTRYPOINT
-  作用和cmd一样 ，一个dockerfile里面只能有一个entrypoint。
-  但是 如果同时写了cmd和entrypoint， 谁在后面谁生效。
+  1.作用和cmd一样 ，一个dockerfile里面只能有一个entrypoint。
+  2.如果在shell中重新定义，比如 docker run echo xxx，entrypoint无影响还是听 entry point的。
+  
+  但是 如果同时写了cmd和entrypoint， 。1. 如果2者都是 jason format，他们会拼接运行，一起运行。 
+                                  。2.如果 entry point不是 jason format，直接 覆盖其他所有cmd。 以entrypoint为准运行。
   
 ```
 
