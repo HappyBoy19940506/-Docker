@@ -5,6 +5,12 @@ FROM
 不多说了
 
 ```
+```
+WORKDIR
+ 为 RUN, CMD, ENTRYPOINT, COPY and ADD instructions 设置目录，也就是说 进入容器之后 自动会cd在哪里
+ 
+```
+
 
 ```
 RUN [command]
@@ -42,12 +48,6 @@ ENTRYPOINT
   作用和cmd一样 ，一个dockerfile里面只能有一个entrypoint。
   但是 如果同时写了cmd和entrypoint， 谁在后面谁生效。
   
-```
-
-```
-WORKDIR
- 为 RUN, CMD, ENTRYPOINT, COPY and ADD instructions 设置目录，也就是说 进入容器之后 自动会cd在哪里
- 
 ```
 
 ```
