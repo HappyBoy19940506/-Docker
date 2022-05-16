@@ -88,7 +88,8 @@ docker tag myimage:1.0 myrepo/myimage:2.0
 
 ```
 
-```To delete all containers including its volumes use,
+```
+To delete all containers including its volumes use,
 
 docker rm -vf $(docker ps -aq)
 
