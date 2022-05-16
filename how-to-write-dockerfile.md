@@ -36,7 +36,13 @@ ENV
 ENV HOME_PATH = '/Users/user'
 调用: $HOME_PATH
 ```
+```
+ARG
+相比较于env（ 在build 和 run都一直生效  ）
 
+ARG 只在build时候生效，build完成后就消失了，run的时候是没有的
+
+```
 ```
 CMD
 1.相当于在 容器run过程中 命令行中执行什么。。。一定要写 阻塞式指令，否则容器执行完 生命周期结束，docker ps 就查不到了，会自动 停止运行。
