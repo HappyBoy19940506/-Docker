@@ -6,11 +6,11 @@ RUN [command]
 相当于在 容器build过程中 命令行中执行什么。。。
 ```
 ```
-ADD [host_file/folder]     [destination_inside_docker]
+ADD 【不常用】 [host_file/folder]     [destination_inside_docker]
 拷贝文件/文件夹/url。 到 容器里面去，并且会自动解压
 ```
 ```
-COPY [host_file/folder]     [destination_inside_docker]
+COPY 【更常用】 [host_file/folder]     [destination_inside_docker]
 拷贝文件/文件夹/url。 到 容器里面去，但是 和add 不同的是，不会自动下载或者解压
 ```
 
