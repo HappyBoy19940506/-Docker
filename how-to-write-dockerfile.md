@@ -50,9 +50,9 @@ ENTRYPOINT
   1.作用和cmd一样 ，一个dockerfile里面只能有一个entrypoint。
   2.如果在shell中重新定义，比如 docker run echo xxx，entrypoint无影响还是听 entry point的。
   
-  但是 如果同时写了cmd和entrypoint， 。1. 如果2者都是 jason format，他们会拼接运行，一起运行。 规则： entrypoint在前，cmd再后，**拼接运行**
-                                  。2.如果 entry point不是 jason format，直接 覆盖其他所有cmd。 以entrypoint为准运行。
-  
+  但是 如果同时写了cmd和entrypoint 1.如果2者都是 jason format，他们会拼接运行，一起运行。 规则： entrypoint在前，cmd再后，**拼接运行**
+                                2.如果 entry point不是 jason format，直接 覆盖其他所有cmd。 以entrypoint为准运行。
+ 
 ```
 
 ```
