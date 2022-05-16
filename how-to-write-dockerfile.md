@@ -86,3 +86,14 @@ ONBUILD xxx
 但是 如果有别的dockerfile FROM了该镜像， 那么这个dockerfile 在build其镜像时候 就会触发 该命令 生成一个 值为100的参数。
 
 ```
+
+
+```
+
+SHELL
+
+SHELL /bin/sh
+SHELL CMD
+SHELL /bin/bash
+
+```
