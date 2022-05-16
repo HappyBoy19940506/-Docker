@@ -65,6 +65,13 @@ docker logs --tail 100 container_name
 ```
 
 ```
+容器运行后，如何进入容器：
+docker exec -it 
+其实这部 dockerfile的cmd命令或者 entrypoint已经做了
+
+```
+
+```
 >>>>>>>>>>>>>>>>>>Delete all running and stopped containers<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 docker container rm -f $(docker ps -aq)
