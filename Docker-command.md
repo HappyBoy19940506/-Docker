@@ -65,7 +65,7 @@ docker logs --tail 100 container_name
 ```
 
 ```
-Delete all running and stopped containers
+>>>>>>>>>>>>>>>>>>Delete all running and stopped containers
 
 docker container rm -f $(docker ps -aq)
 
@@ -89,14 +89,14 @@ docker tag myimage:1.0 myrepo/myimage:2.0
 ```
 
 ```
-To delete all containers including its volumes use,
+>>>>>>>>>>>>>>>>>>To delete all containers including its volumes use,
 
 docker rm -vf $(docker ps -aq)
 
 ```
 
 ```
-To delete all the images,
+>>>>>>>>>>>>>>>>>>To delete all the images<<<<<<<<<<<<<<<
 
 docker rmi -f $(docker images -aq)
 
