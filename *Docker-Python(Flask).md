@@ -1,3 +1,19 @@
+```
+# syntax=docker/dockerfile:1.2
+
+
+
+
+
+
+
+
+
+```
+
+
+
+
 ** 1. Directory structure for a python web app**
 
 ```
