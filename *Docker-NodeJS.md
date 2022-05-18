@@ -17,9 +17,9 @@ WORKDIR /app
 
 .dockerignore
     ├── *.log
-    ├── -dockerignore
-    ├── -env
-    ├── -git
+    ├── .dockerignore
+    ├── .env
+    ├── .git
     ├── Dockerfile
     ├── cicd
     └── node_modules
