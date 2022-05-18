@@ -11,7 +11,7 @@ WORKDIR /app
 
 
 ```
-** .dockerignore**
+**.dockerignore**
 ```
 1. .dockerignore
 
