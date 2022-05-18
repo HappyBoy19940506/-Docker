@@ -17,7 +17,7 @@ WORKDIR /app
 
 **.dockerignore**
 
-**\RUN\&&\**
+**\ RUN\ &&\ **
 
 **Multi stage images**
 
