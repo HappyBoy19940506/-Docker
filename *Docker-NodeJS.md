@@ -9,13 +9,15 @@ ENV NODE_ENV=production or development
 
 WORKDIR /app
 
-COPY package.json .
+COPY ["package.json", "package-lock.json*", "./"]
 
-RUN npm install
+RUN npm install --production or development
 
 COPY . .
 
-CMD ["npm", "start"]
+CMD ["npm", "start"] or  CMD [ "node", "server.js" ]
+
+
 
 
 ```
