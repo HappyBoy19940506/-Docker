@@ -15,11 +15,11 @@ WORKDIR /app
 ```
 *Best Practise*
 
-**.dockerignore**
+**1..dockerignore**
 
-**\ RUN\ &&\ **
+**2. RUN  &&  **
 
-**Multi stage images**
+**3. Multi stage images**
 
 
 
