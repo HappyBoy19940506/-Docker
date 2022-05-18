@@ -5,11 +5,17 @@
 
 FROM node:12.18.1
 
-ENV NODE_ENV=production / development
+ENV NODE_ENV=production or development
 
 WORKDIR /app
 
+COPY package.json .
 
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "start"]
 
 
 ```
