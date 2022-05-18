@@ -17,9 +17,9 @@ WORKDIR /app
 
 **1..dockerignore**
 
-**2. RUN  &&  **
+**2. RUN command && command**
 
-**3. Multi stage images**
+**3. Multi stage images** //因为一层一层运行，multi-stages可以parallel运行
 
 
 
