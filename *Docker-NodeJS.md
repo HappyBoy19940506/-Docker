@@ -1,3 +1,5 @@
+*Template*
+
 ```
 # syntax=docker/dockerfile:1
 
@@ -11,6 +13,7 @@ WORKDIR /app
 
 
 ```
+*Best Practise*
 **.dockerignore**
 ```
 1. .dockerignore
