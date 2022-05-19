@@ -81,6 +81,7 @@ my-app
 
 ```
 ```
+name it as Dockerfile.prod
 # syntax=docker/dockerfile:1
 
 FROM node:12.18.1
