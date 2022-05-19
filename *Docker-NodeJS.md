@@ -88,17 +88,16 @@ FROM node:12.18.1
 
 # logging is kept to a minimum, essential level , more caching levels take place to optimize performance
 
-ENV NODE_ENV=production or development 
-
+ENV NODE_ENV=production
 WORKDIR /app
 
 COPY ["package.json", "package-lock.json*", "./"]
 
-RUN npm install --production or development
+RUN npm install --production 
 
 COPY . .
 
-CMD ["npm", "start"] or  CMD [ "node", "server.js" ]
+CMD ["npm","run", "build" ]
 
 ```
 *----------------------------------------------------------------*
