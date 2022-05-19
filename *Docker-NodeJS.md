@@ -1,4 +1,4 @@
-*Template for React dev env*
+*Template for React -dev env*
 
 ```
 # syntax=docker/dockerfile:1
@@ -18,7 +18,7 @@ COPY . .
 CMD ["npm", "start"] or  CMD [ "node", "server.js" ]
 
 ```
-*Template for React pro env*
+*Template for React -prod env*
 
 ```
 # syntax=docker/dockerfile:1
