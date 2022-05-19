@@ -39,7 +39,7 @@ ssss
 
 ```
 docker run 
-    -it     # will show colored some output,e.g. warning
+    -it # 't'will show colored some output,e.g. warning,'i' if image has layer which contians CMD ["/bin/sh"]bash commoand.it'll stop,and wait for input
     --rm    # delete container after stoping running
     -v ${PWD}:/app    #current folder mount to /app/xxxx 
     -v /app/node_modules  # syncho the node_modoules inside and outside always (node_modules stores all packages downloaded by node)
