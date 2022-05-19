@@ -30,6 +30,13 @@ CMD ["npm", "start"]
 
 
 ```
+
+```
+dockercompose.yml
+
+ssss
+```
+
 ```
 docker run 
     -it     # will show colored some output,e.g. warning
