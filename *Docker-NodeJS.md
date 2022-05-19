@@ -12,7 +12,7 @@ ENV NODE_ENV=development
 # set working direction
 WORKDIR /app
 
-# add exectable files from `/app/node_modules/.bin` to same place inside container - make sure node exectable command can run smoothly
+# Adding node_modules/bin to the PATH environment variable  - make sure node exectable command can run smoothly
 ENV PATH /app/node_modules/.bin:$PATH
 
 
