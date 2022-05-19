@@ -1,4 +1,4 @@
-*Template for React*
+*Template for React dev env*
 
 ```
 # syntax=docker/dockerfile:1
@@ -17,17 +17,34 @@ COPY . .
 
 CMD ["npm", "start"] or  CMD [ "node", "server.js" ]
 
-
-
+```
+*Template for React pro env*
 
 ```
+# syntax=docker/dockerfile:1
+
+FROM node:12.18.1
+
+ENV NODE_ENV=production or development
+
+WORKDIR /app
+
+COPY ["package.json", "package-lock.json*", "./"]
+
+RUN npm install --production or development
+
+COPY . .
+
+CMD ["npm", "start"] or  CMD [ "node", "server.js" ]
+
+```
+
 *Template for Vue.js*
 
 ```
 https://mherman.org/blog/dockerizing-a-vue-app/
 
-
-
+ 
 
 ```
 
@@ -51,6 +68,7 @@ https://mherman.org/blog/dockerizing-a-vue-app/
     ├── .dockerignore
     ├── .env
     ├── .git
+    ├── .gitignore
     ├── Dockerfile
     ├── cicd
     └── node_modules
