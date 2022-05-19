@@ -3,19 +3,31 @@
 ```
 # syntax=docker/dockerfile:1
 
+# pull the official base image,choose a stable version
 FROM node:12.18.1
 
-ENV NODE_ENV=production or development
+# running in a development environment by default
+ENV NODE_ENV=development
 
+# set working direction
 WORKDIR /app
 
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+
+# copy application dependencies
 COPY ["package.json", "package-lock.json*", "./"]
 
-RUN npm install --production or development
+# install application dependencies
+RUN npm install --development
 
+# add app
 COPY . .
 
-CMD ["npm", "start"] or  CMD [ "node", "server.js" ]
+# start app , see package.json inside 
+CMD ["npm", "start"]
+
 
 ```
 *Template for React -prod env*
@@ -25,7 +37,9 @@ CMD ["npm", "start"] or  CMD [ "node", "server.js" ]
 
 FROM node:12.18.1
 
-ENV NODE_ENV=production or development
+# logging is kept to a minimum, essential level , more caching levels take place to optimize performance
+
+ENV NODE_ENV=production or development 
 
 WORKDIR /app
 
