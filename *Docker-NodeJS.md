@@ -50,6 +50,7 @@ docker run
 
 *Template for React -prod env*
 ```
+----nginx.conf
 server {
 
   listen 80;
