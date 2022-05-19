@@ -34,7 +34,11 @@ CMD ["npm", "start"]
 ```
 dockercompose.yml
 
-ssss
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - CI=true
+
+We used the CI=true flag to run all our tests only once, because some test runners (e.g. Jest) would run the tests in watch mode and thus would never exit the process
 ```
 
 ```
