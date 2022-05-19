@@ -30,6 +30,16 @@ CMD ["npm", "start"]
 
 
 ```
+```
+docker run 
+    -it     # will show colored some output,e.g. warning
+    --rm    #
+    -v ${PWD}:/app    #current folder mount to /app/xxxx 
+    -v /app/node_modules  # syncho the node_modoules inside and outside always (node_modules stores all packages downloaded by node)
+    -p 3001:3000 
+    -e CHOKIDAR_USEPOLLING=true # used in react-app,mostly like the debug mode in Flask ,will polling scan the change and hot reload
+    dockerhub-ID:tagname
+```
 *Template for React -prod env*
 
 ```
@@ -86,7 +96,7 @@ https://mherman.org/blog/dockerizing-a-vue-app/
     ├── Dockerfile
     ├── **/.DS_Store
     ├── build
-    └── **/node_modules
+    └── **/node_modules   # anyway we build npm install will creat this, so ignore this folder when copy 
 
 ```
 ```
