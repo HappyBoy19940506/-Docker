@@ -81,11 +81,12 @@ https://mherman.org/blog/dockerizing-a-vue-app/
     ├── *.log
     ├── .dockerignore
     ├── .env
-    ├── .git
+    ├── **/.git
     ├── .gitignore
     ├── Dockerfile
-    ├── cicd
-    └── node_modules
+    ├── **/.DS_Store
+    ├── build
+    └── **/node_modules
 
 ```
 ```
