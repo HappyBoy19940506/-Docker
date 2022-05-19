@@ -23,11 +23,11 @@ CMD ["npm", "start"] or  CMD [ "node", "server.js" ]
 ```
 *Best Practise*
 
-**1..dockerignore**
+**1. add.dockerignore**
 
 **2. RUN command && command**
 
-**3. Multi stage images** //因为一层一层运行，multi-stages可以parallel运行
+**3. Multi stage images** //因为一层一层运行，multi-stages可以parallel运行,if enable BuildKit tech.
 
 
 
