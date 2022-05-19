@@ -1,4 +1,4 @@
-*Template*
+*Template for React*
 
 ```
 # syntax=docker/dockerfile:1
