@@ -3,8 +3,8 @@
 ```
 # syntax=docker/dockerfile:1
 
-# pull the official base image,choose a stable version
-FROM node:12.18.1
+# pull the official base image,choose a stable version, alias as build
+FROM node:12.18.1 AS build
 
 # running in a development environment by default
 ENV NODE_ENV=development
@@ -12,7 +12,7 @@ ENV NODE_ENV=development
 # set working direction
 WORKDIR /app
 
-# add `/app/node_modules/.bin` to $PATH
+# add exectable files from `/app/node_modules/.bin` to same place inside container - make sure node exectable command can run smoothly
 ENV PATH /app/node_modules/.bin:$PATH
 
 
@@ -22,10 +22,10 @@ COPY ["package.json", "package-lock.json*", "./"]
 # install application dependencies
 RUN npm install --development
 
-# add app
+# copy app source code
 COPY . .
 
-# start app , see package.json inside 
+# start app , see package.json inside for details
 CMD ["npm", "start"]
 
 
