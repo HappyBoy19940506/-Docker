@@ -49,7 +49,36 @@ docker run
 ```
 
 *Template for React -prod env*
+```
+server {
 
+  listen 80;
+
+  location / {
+    root   /usr/share/nginx/html;
+    index  index.html index.htm;
+
+    # to redirect all the requests to index.html, 
+    # useful when you are using react-router
+
+    try_files $uri /index.html; 
+  }
+
+  error_page   500 502 503 504  /50x.html;
+
+  location = /50x.html {
+    root   /usr/share/nginx/html;
+  }
+
+}
+my-app
+│   Dockerfile.prod
+│   .dockerignore    
+│
+└───nginx
+      nginx.conf
+
+```
 ```
 # syntax=docker/dockerfile:1
 
@@ -70,14 +99,11 @@ COPY . .
 CMD ["npm", "start"] or  CMD [ "node", "server.js" ]
 
 ```
-
+*----------------------------------------------------------------*
 *Template for Vue.js*
 
 ```
 https://mherman.org/blog/dockerizing-a-vue-app/
-
- 
-
 ```
 
 
