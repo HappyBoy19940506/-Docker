@@ -17,7 +17,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 
 # copy application dependencies
-COPY ["package.json", "package-lock.json", "./"]
+COPY ["package.json","package-lock.json*", "./"]
 
 # install application dependencies
 RUN npm install --development
