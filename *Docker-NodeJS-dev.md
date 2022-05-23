@@ -1,5 +1,4 @@
 *Template for React -dev env*
-
 ```
 # syntax=docker/dockerfile:1
 
@@ -34,18 +33,70 @@ CMD ["npm", "start"]
 
 
 ```
+*Template docker-compose.yml*
+```
+version: "3.7"
+services:
+    client:
+        #image: mhart/alpine-node:6.8.0
+        build: ./client
+        restart: always
+        ports:
+            - "3000:3000"
+        working_dir: /client
+        volumes:
+            - ./client:/client
+            - /client/node_modules
+        environment:
+            - NODE_ENV=development
+            - CHOKIDAR_USEPOLLING=true
+            - CI=true
+        networks:
+            - my-react-app
+    api:
+        #image: yourdockHub/tagname
+        build:
+            context: ./api/
+            dockerfile: api.Dockerfile
+        restart: always
+        ports:
+            - "9000:9000"
+        # ExpressJS default port
+        volumes:
+            - ./api:/api
+            - /api/node_modules
+        environment:
+            - NODE_ENV=development
+            - CHOKIDAR_USEPOLLING=true
+            - CI=true
+  # We used the CI=true flag to run all our tests only once, because some test runners (e.g. Jest) would run the tests in watch mode and thus would never exit the process
+        depends_on:
+            - mongodb
+        networks:
+            - my-react-app
+    # mongodb just a service name,you can customize        
+    mongodb:
+        image: mongo
+        restart: always
+        #container_name: mongodb
+        volumes:
+            - ./mongodb_data:/data/db
+        ports:
+            - 27017:27017
+        environment:
+            MONGO_INITDB_DATABASE: my-database-name
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: password
+        networks:
+            - my-react-app
+networks:
+    my-react-app:
+        driver: bridge
+        #default is bridge mode
 
 ```
-dockercompose.yml
 
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-      - CI=true
-
-We used the CI=true flag to run all our tests only once, because some test runners (e.g. Jest) would run the tests in watch mode and thus would never exit the process
-
-```
-
+*Docker run command*
 ```
 docker run 
     -it # 't'will show colored some output,e.g. warning,'i' if image has layer which contians CMD ["/bin/sh" + nothing]bash commoand.it'll stop,and wait for input, ref: alpine:latest
@@ -56,7 +107,6 @@ docker run
     -e CHOKIDAR_USEPOLLING=true # used in react-app,mostly like the debug mode in Flask ,will polling scan the change and hot reload
     dockerhub-ID:tagname
 ```
-
 
 
 
