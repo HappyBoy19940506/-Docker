@@ -98,7 +98,18 @@ networks:
         #default is bridge mode
 
 ```
-
+*adminer GUI Database management tool*
+```
+  adminer:
+      image: adminer:latest
+      restart: always
+      ports:
+        - 8080:8080
+      depends_on:
+        - mysql_db
+      environment:
+        ADMINER_DEFAULT_SERVER: mysql_db
+```
 *Docker run command*
 ```
 docker run 
