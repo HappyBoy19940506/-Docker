@@ -30,8 +30,9 @@ my-app
       nginx.conf
 
 ```
+*Tempalte prod.Dockerfile*
 ```
-name it as Dockerfile.prod
+
 # syntax=docker/dockerfile:1
 
 FROM node:12.18.1
