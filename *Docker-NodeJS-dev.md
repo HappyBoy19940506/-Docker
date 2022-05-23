@@ -52,65 +52,9 @@ docker run
     dockerhub-ID:tagname
 ```
 
-*Template for React -prod env*
-```
-----nginx.conf
-server {
 
-  listen 80;
-
-  location / {
-    root   /usr/share/nginx/html;
-    index  index.html index.htm;
-
-    # to redirect all the requests to index.html, 
-    # useful when you are using react-router
-
-    try_files $uri /index.html; 
-  }
-
-  error_page   500 502 503 504  /50x.html;
-
-  location = /50x.html {
-    root   /usr/share/nginx/html;
-  }
-
-}
-my-app
-│   Dockerfile.prod
-│   .dockerignore    
-│
-└───nginx
-      nginx.conf
-
-```
-```
-name it as Dockerfile.prod
-# syntax=docker/dockerfile:1
-
-FROM node:12.18.1
-
-# logging is kept to a minimum, essential level , more caching levels take place to optimize performance
-
-ENV NODE_ENV=production
-WORKDIR /app
-
-COPY ["package.json", "package-lock.json*", "./"]
-
-RUN npm install --production 
-
-COPY . .
-
-CMD ["npm","run", "build" ]
-
-```
 *----------------------------------------------------------------*
 
-*Template for Vue.js*
-
-```
-https://mherman.org/blog/dockerizing-a-vue-app/
-```
 
 
 
@@ -179,3 +123,8 @@ react-app
     
 ```
 
+*Template for Vue.js*
+
+```
+https://mherman.org/blog/dockerizing-a-vue-app/
+```
