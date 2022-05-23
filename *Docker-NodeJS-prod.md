@@ -32,7 +32,9 @@ EXPOSE 3000
 # start app , see package.json inside for details
 CMD ["npm","run", "build" ]
 
-
+```
+*nginx dockerfile*
+```
 # production environment -set nginx as web server
 
 FROM nginx:1.17
