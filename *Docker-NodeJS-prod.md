@@ -1,5 +1,5 @@
 *Template prod.Dockerfile for React -prod env 前端后端都要写一个dockerfile* 
-* pro env 有nginx，但是不挂载，不同步 
+* prod env 有nginx，但是不挂载，不同步, 无测试
 ```
 # syntax=docker/dockerfile:1
 
