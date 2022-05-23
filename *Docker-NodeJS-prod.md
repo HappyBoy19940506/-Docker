@@ -1,4 +1,4 @@
-*Template for React -prod env*
+*Template prod.Dockerfile for React -prod env*
 ```
 ----nginx.conf
 server {
@@ -22,17 +22,10 @@ server {
   }
 
 }
-my-app
-│   Dockerfile.prod
-│   .dockerignore    
-│
-└───nginx
-      nginx.conf
 
 ```
 *Tempalte prod.Dockerfile*
 ```
-
 # syntax=docker/dockerfile:1
 
 FROM node:12.18.1
