@@ -1,5 +1,5 @@
 *Template dev.Dockerfile for React -dev env 前端后端都要写一个dockerfile*
-*dev env 无nginx web server，但是 有测试，有挂载，有同步
+* dev env 无nginx web server，但是 有测试，有挂载，有同步
 ```
 # syntax=docker/dockerfile:1
 
