@@ -98,8 +98,9 @@ networks:
         #default is bridge mode
 
 ```
-*adminer GUI Database management tool*
+*adminer GUI Database management tool还没有完成，无法运行*
 ```
+    MYSQL:
   adminer:
       image: adminer:latest
       restart: always
@@ -109,6 +110,24 @@ networks:
         - mysql_db
       environment:
         ADMINER_DEFAULT_SERVER: mysql_db
+        
+        
+    MONGO-EXPRSS:
+        mongo-express:
+        image: mongo-express:latest
+        restart: always
+        ports:
+          - 8080:8080
+        depends_on:
+          - mongodb
+        networks:
+          - my-react-app
+        environment:
+            ME_CONFIG_MONGODB_ENABLE_ADMIN: false
+            ME_CONFIG_MONGODB_AUTH_DATABASE: my-database-name
+            ME_CONFIG_MONGODB_SERVER: mongodb
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: password
 ```
 *Docker run command*
 ```
