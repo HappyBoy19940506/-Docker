@@ -25,6 +25,10 @@ RUN npm install --development
 # copy app source code
 COPY . .
 
+EXPOSE 3000
+# Expose specific ports,e.g. 
+# React-3000 ExpressJS-9000 Nginx-80 MongoDB-27017 MySQL-3306
+
 # start app , see package.json inside for details
 CMD ["npm", "start"]
 
@@ -39,6 +43,7 @@ dockercompose.yml
       - CI=true
 
 We used the CI=true flag to run all our tests only once, because some test runners (e.g. Jest) would run the tests in watch mode and thus would never exit the process
+
 ```
 
 ```
