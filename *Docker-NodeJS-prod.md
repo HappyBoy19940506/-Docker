@@ -51,6 +51,7 @@ CMD ["npm","run", "build" ]
 
 ```
 
+***-----------***
 
 *1.如何理解Nginx, WSGI, Flask之间的关系*
 ```
