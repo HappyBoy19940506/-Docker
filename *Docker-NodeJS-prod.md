@@ -1,4 +1,5 @@
 *Template prod.Dockerfile for React -prod env 前端后端都要写一个dockerfile* 
+* pro env 有nginx，但是不挂载，不同步 
 ```
 # syntax=docker/dockerfile:1
 
@@ -40,13 +41,95 @@ FROM nginx:1.17
 
 COPY --from=build /home/node/code/build /usr/share/nginx/html
 
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+
+
 EXPOSE 80
+
+```
+*Template docker-compose.yml*
+```
+version: "3.7"
+services:
+    nginx:
+      depends_on:
+        - api
+        - client
+      restart: always
+      build:
+        dockerfile: prod.Dockerfile
+        context: ./nginx
+      ports:
+        - "80:80"
+      networks:
+            - my-react-app
+      
+    client:
+        #image: mhart/alpine-node:6.8.0
+        build: 
+            context: ./client/
+            dockerfile: prod.Dockerfile
+        restart: always
+        ports:
+            - "3000:3000"
+        working_dir: /client
+        environment:
+            - NODE_ENV=production
+        networks:
+            - my-react-app
+    api:
+        #image: yourdockHub/tagname
+        build:
+            context: ./api/
+            dockerfile: dev.Dockerfile
+        restart: always
+        ports:
+            - "9000:9000"
+        # ExpressJS default port
+
+        environment:
+            - NODE_ENV=production
+ 
+  # We used the CI=true flag to run all our tests only once, because some test runners (e.g. Jest) would run the tests in watch mode and thus would never exit the process
+        depends_on:
+            - mongodb
+        networks:
+            - my-react-app
+    # mongodb just a service name,you can customize        
+    mongodb:
+        image: mongo
+        restart: always
+        #container_name: mongodb
+        volumes:
+            - ./mongodb_data:/data/db
+        ports:
+            - 27017:27017
+        environment:
+            MONGO_INITDB_DATABASE: my-database-name
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: password
+        networks:
+            - my-react-app
+networks:
+    my-react-app:
+        driver: bridge
+        #default is bridge mode
+
+
+
+
+
+
 
 
 ```
 *Nginx conf settings for react *
 ```
 ----nginx.conf
+upstream api {
+  server api:9000;
+}
+
 server {
 
   listen 80;
@@ -65,6 +148,13 @@ server {
 
   location = /50x.html {
     root   /usr/share/nginx/html;
+  }
+  
+   location /api {
+
+      rewrite /api/(.*) /$1 break;
+      proxy_pass http://api;
+   # how to redirect to api back-end, depends on the source code
   }
 
 }
