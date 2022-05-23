@@ -77,41 +77,38 @@ services:
             - mongodb
         networks:
             - my-react-app
-            
-    # mongodb just a service name,you can customize        
-    mongodb:
-        image: mongo
+ mongo:
+    image: mongo
+    restart: always
+    volumes:
+        - ./mongodb_data:/data/db
+    networks:
+        - my-react-app
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: example
+
+ mongo-express:
+        image: mongo-express
         restart: always
-        #container_name: mongodb
-        volumes:
-            - ./mongodb_data:/data/db
         ports:
-            - 27017:27017
-        environment:
-            MONGO_INITDB_ROOT_USERNAME: root
-            MONGO_INITDB_ROOT_PASSWORD: example
+            - 8081:8081
+        depends_on:
+            - mongo
         networks:
             - my-react-app
+        environment:
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: example
+            ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
 
 # 如果用docker exec -it id bash方法进入mongodb container，必须用用户名密码登入，否则会unauthorized.
 # root@06e8e28840bb:/# mongo -u root -p example
 # 进入后可以用 db.runCommand("connectionStatus")查看用户
 # >use mydb 创建database， >db 当前db  >show dbs 当前数据库必须要有数据才能显示，所以， db.movie.insert({"name":"tutorials point"})
 
-    mongo-express:
-        image: mongo-express:latest
-        restart: always
-        ports:
-          - 8081:8081
-        depends_on:
-          - mongodb
-        networks:
-          - my-react-app
-        environment:
-            ME_CONFIG_MONGODB_ADMINUSERNAME: root
-            ME_CONFIG_MONGODB_ADMINPASSWORD: example
-            ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
-            
+******
+******
             
 networks:
     my-react-app:
