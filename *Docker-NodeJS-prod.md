@@ -10,10 +10,10 @@ FROM node:12.18.1 AS build
 ENV NODE_ENV=production
 
 # set working direction
-WORKDIR /app
+WORKDIR /client
 
 # Adding node_modules/bin to the PATH environment variable  - make sure node exectable command can run smoothly
-ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH /client/node_modules/.bin:$PATH
 
 
 # copy application dependencies
@@ -41,7 +41,7 @@ FROM nginx:1.17
 
 #npm build will create a folder named build to cache static files, copy build folder into nginx container cache folder
 
-COPY --from=build /home/node/code/build /usr/share/nginx/html
+COPY --from=build ../client/build  /usr/share/nginx/html
 
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 
@@ -91,8 +91,7 @@ services:
 
         environment:
             - NODE_ENV=production
- 
-  # We used the CI=true flag to run all our tests only once, because some test runners (e.g. Jest) would run the tests in watch mode and thus would never exit the process
+
         depends_on:
             - mongodb
         networks:
@@ -102,8 +101,7 @@ services:
         image: mongo
         restart: always
         #container_name: mongodb
-        volumes:
-            - ./mongodb_data:/data/db
+        
         ports:
             - 27017:27017
         environment:
