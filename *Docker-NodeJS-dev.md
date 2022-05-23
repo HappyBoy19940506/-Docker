@@ -1,4 +1,4 @@
-*Template for React -dev env*
+*Template dev.Dockerfile for React -dev env*
 ```
 # syntax=docker/dockerfile:1
 
@@ -39,7 +39,9 @@ version: "3.7"
 services:
     client:
         #image: mhart/alpine-node:6.8.0
-        build: ./client
+        build: 
+            context: ./client/
+            dockerfile: dev.Dockerfile
         restart: always
         ports:
             - "3000:3000"
@@ -57,7 +59,7 @@ services:
         #image: yourdockHub/tagname
         build:
             context: ./api/
-            dockerfile: api.Dockerfile
+            dockerfile: dev.Dockerfile
         restart: always
         ports:
             - "9000:9000"
