@@ -108,6 +108,7 @@ services:
 # >use mydb 创建database， >db 当前db  >show dbs 当前数据库必须要有数据才能显示，所以， db.movie.insert({"name":"tutorials point"})
 
 ******
+注意 数据库的volume挂载问题，每次运行容器都会保存db运行的数据。不停累加，如果配置变化，会导致access denied。要清空挂载目录才行。
 ******
             
 networks:
