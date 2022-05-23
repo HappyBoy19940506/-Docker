@@ -57,6 +57,7 @@ services:
       depends_on:
         - api
         - client
+   # Always restart the container regardless of the exit status. regardless of the current state of the container
       restart: always
       build:
         dockerfile: prod.Dockerfile
