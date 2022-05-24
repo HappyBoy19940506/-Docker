@@ -44,6 +44,7 @@ FROM nginx:1.17
 COPY --from=build ../client/build  /usr/share/nginx/html
 
 COPY ./default.conf /etc/nginx/conf.d/default.conf
+（RUN rm /etc/nginx/conf.d/default.conf）
 
 COPY nginx/nginx.conf /etc/nginx/conf.d
 
