@@ -158,7 +158,9 @@ docker run
     ├── **/.DS_Store
     ├── build
     └── **/node_modules   # anyway we build npm install will creat this, so ignore this folder when copy 
-
+    -----npm-debug.log
+    
+    
 ```
 ```
 2、package.json
