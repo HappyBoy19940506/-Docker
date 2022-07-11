@@ -81,6 +81,7 @@ docker exec -it +containername bash
 
 docker container rm -f $(docker ps -aq)
 
+docker system prune
 ```
 
 
@@ -111,5 +112,7 @@ docker rm -vf $(docker ps -aq)
 >>>>>>>>>>>>>>>>>>To delete all the images<<<<<<<<<<<<<<<
 
 docker rmi -f $(docker images -aq)
+
+docker system prune
 
 ```
