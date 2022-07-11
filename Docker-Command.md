@@ -77,15 +77,6 @@ docker exec -it +containername bash
 ```
 
 ```
->>>>>>>>>>>>>>>>>>Delete all running and stopped containers<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-docker container rm -f $(docker ps -aq)
-
-docker system prune
-```
-
-
-```
 image会自动成为一个 repo，后续同名的image会自动加入到同一个repo中，用tag来区别版本。
 
 docker build -t DockerHubAccountID/repo(image):tag .
@@ -109,10 +100,19 @@ docker rm -vf $(docker ps -aq)
 ```
 
 ```
+>>>>>>>>>>>>>>>>>>Delete all running and stopped containers<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+docker container rm -f $(docker ps -aq)
+
+```
+
+```
 >>>>>>>>>>>>>>>>>>To delete all the images<<<<<<<<<<<<<<<
 
 docker rmi -f $(docker images -aq)
 
-docker system prune
+```
 
+```
+docker system prune 清理资源，所有多余的layer，cache，以及stopped的容器。
 ```
